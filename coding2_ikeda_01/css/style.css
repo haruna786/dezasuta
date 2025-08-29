@@ -5,46 +5,50 @@ header{
     justify-content: space-between;
     flex-direction:row;
     align-items: flex-start; 
-    /* 両端をコンテナの端に揃え、その間に残りのスペースを均等に分配 */
+    /* 要素をFlexboxコンテナの始まり（上）に揃える */
     align-items: center; /* 垂直方向の中央に揃える */
     max-width: 960px;
     margin: 0 auto; 
     padding: 0 10px; /*　両端に余白を追加して、画面端にタイトルがくっつかないようにする */
 }
 
-.pc_nav ul{
+nav ul{
     display: flex;
-    gap: 20px;
     padding: 20px 10px;
 }
 
-.pc_nav ul li{
-    font-size: 10px;
+nav ul li{
+    font-size: 16px;
     padding: 3px 15px;
     color: #4c4c4c;
     border-right: 1px solid #4c4c4c;
 }
-.pc_nav ul li:last-child{
+nav ul li:last-child{
     border-right: none;
 }
 
-.sp_nav{
-    display: none;
-}
 /* 課題④部分 */
 @media screen and (max-width: 768px) {
-.pc_nav{
-    display: none;
+header{
+    flex-direction:column ;
+    align-items: flex-start;  /* 左に揃える */
 }
-.sp_nav ul{
-    display: grid;
+nav{
+    width: 100%;
+}
+
+nav ul{
+    flex-direction: column;
     justify-content: flex-end;
-    gap: 40px;
+    gap: 10px;
+    padding: 10px 0;
 }
-.sp_nav ul li{
+nav ul li{
     color: #4c4c4c;
     border-bottom: 1px solid #4c4c4c;
-    font-size: 10px;
+    font-size: 14px;
+    border-right: none;
+    padding: 10px;
 }
 }
 
@@ -56,14 +60,16 @@ header{
     justify-content: space-between;
     max-width: 960px;
     margin:0 auto;
+    gap: 30px;/* ボックス間の隙間 */
 }
 
 .blue-box{
     width: 300px;
-    height: 300px;
+    height: 100%;
     background-color: blue;
     color: white;
     margin-bottom: 20px; /* ボックス間の縦方向の隙間 */
+    aspect-ratio: 1 / 1;/* 正方形を維持したまま縮小 */
 }
 
 /* 課題②部分 */
@@ -77,9 +83,10 @@ header{
 }
 
 .red-box{
-    width: 300px;
-    height: 300px;
+    width: 31.25%;
+    height: 100%;
     background-color: red;
     color: white;
     margin-bottom: 20px; /* ボックス間の縦方向の隙間 */
+    aspect-ratio: 1 / 1;/* 正方形を維持したまま縮小 */
 }
