@@ -5,7 +5,7 @@ header{
     justify-content: space-between;
     flex-direction:row;
     align-items: flex-start; 
-    /* 要素をFlexboxコンテナの始まり（上）に揃える */
+    /* 要素をFlexboxコンテナの始まりに揃える */
     align-items: center; /* 垂直方向の中央に揃える */
     max-width: 960px;
     margin: 0 auto; 
