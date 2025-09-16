@@ -191,6 +191,7 @@ h3{
 
 .EVENT_inner ul li a{
     border-bottom: 1px solid #4f260b;
+    text-underline-offset: 0px;
 }
 
 /* ACCES */
@@ -242,15 +243,16 @@ font-size: 20px;
     width: 125px;
 }
 
+
+
 /* SP Ver */
 
 @media screen and (max-width: 768px) {
 .header_inner {
     justify-content: space-between; 
-    width: 100%;
     position: absolute;
-    align-items: center;
 }
+
 .header_nav ul {
     display: none; 
 }
@@ -260,26 +262,25 @@ font-size: 20px;
 }
 .mainvisual img {
     width: 100%;
-    height: 173%;
-    padding-top: 60px; /* 固定ヘッダーの分だけ下げる */
+    height: 650px;
     display: block;
     object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
 }
   /* メイン部分 */
     .padding {
-        max-width: 100%;
-        padding: 0 10px;
-    }
+    max-width: 768px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
     
     .headline {
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 42px;
+        padding-bottom: 64px;
         text-align: center; 
     }
 
     h2 {
         font-size: 48px;
-        padding-bottom: 20px;
     }
 
     .head_first {
@@ -289,148 +290,153 @@ font-size: 20px;
 
     .head_second {
         font-size: 14px;
+        padding-top: 27px;
     }
 
     /* ABOUT US */
-    .about_us {
-        flex-direction: column; /* 縦並びにする */
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
+.heading_h2 img {
+    height: 45.5px;
+    width: auto;
+}
 
-    .about_us img {
-        width: 100%;
-        border-radius: 0;
-    }
+.about_us_font {
+    padding-bottom: 63px;
+}
 
-    .about_us_inner {
+.about_us {
+    flex-direction: column; /* 縦並びにする */
+    padding-bottom: 50px;
+}
+
+.about_us_image{
+    border-radius: none;
+    width: 375px; /* 幅を500pxに固定 */
+    height: 245px; /* 高さを560pxに固定 */
+    object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
+}
+
+.about_us_inner {
         padding: 30px 0;
     }
 
-    .about_us .heading_h2 {
+.about_us .heading_h2 {
         text-align: center; /* SP版では中央揃えにする */
     }
 
-    h3 {
-        font-size: 28px;
-        padding-bottom: 20px;
-        text-align: center;
+h3 {
+        font-size: 36px;
+        padding-bottom: 30px;
+        text-align: left;
+        letter-spacing: 0.1em;
     }
     
-    .about_us p {
-        font-size: 14px;
+.about_us p {
+        font-size: 16px;
+        letter-spacing: 0.1em;
     }
 
-    /* MENU */
-    .menu_inner ul {
+ /* MENU */
+.menu_inner ul {
         flex-direction: column; /* 縦並びにする */
-        gap: 30px;
+        gap: 52px;
     }
 
-    .menu_inner ul li {
-        width: 100%;
-    }
-    
-    .menu_inner ul li img {
-        width: 100%;
+.menu_inner ul li img {
+        width: 300px;
         height: auto;
     }
 
-    .overlay_text {
+.overlay_text {
         position: absolute;
-        bottom: 20px;
-        left: 20px;
-        font-size: 38px;
+        bottom: -23px;
+        left: 11px;
+        font-size: 40px;
         color: #d30202;
     }
-    
-    .menu_text {
-        padding-top: 20px;
-    }
-    
 
-    /* GALLERY */
-    .GALLERY_inner ul {
-        flex-direction: column; /* 縦並びにする */
-        gap: 20px;
+
+   /* GALLERY */
+.image3{
+        width: 375px;
+        height: 294px;
     }
 
-    .GALLERY_inner ul li {
-        width: 100%;
-    }
-    
-    .GALLERY_inner ul li img {
-        height: auto;
-    }
-
-    .image1{
+.image1{
         display: none;
     }
 
-    .image2{
+.image2{
         display: none;
     }
 
-    .image4{
+.image4{
         display: none;
     }
 
-    .image5{
+.image5{
         display: none;
     }
 
-    /* EVENT */
-    .EVENT_inner {
+/* EVENT */
+.EVENT_inner {
         max-width: 100%;
-        margin: 0 5%;
+        margin: 0 19px;
         padding: 30px;
     }
 
-    .EVENT_inner ul li {
+.EVENT_inner ul li {
         flex-direction: column; /* 縦並びにする */
         align-items: flex-start;
     }
 
-    .date {
+.date {
         padding-right: 0;
         padding-bottom: 5px;
+        font-size: 16px;
     }
 
-    .EVENT_inner ul li a {
+.EVENT_inner ul li a {
         border-bottom: 1px solid #4f260b;
         font-size: 16px;
     }
 
-    /* ACCESS */
-    .ACCESS iframe {
+ /* ACCESS */
+.ACCESS iframe {
         height: 300px;
     }
 
-    /* フッター部分 */
-    footer {
-        padding: 50px 0;
-        text-align: center;
-    }
+.ACCESS_font{
+    padding-top: 33px;
+    padding-bottom: 10px;
+}
 
-    .footer {
+
+/* フッター部分 */
+
+.footer_logo img {
+    height: 51px;
+    width: auto;
+}
+
+.footer {
         flex-direction: column;
         align-items: center;
         padding: 0;
     }
 
-    .footer_address ul {
+.footer_address ul {
         padding-left: 0;
         padding-top: 20px;
-        text-align: center;
+        text-align: left;
     }
 
-    .copy {
+.copy {
         text-align: center;
         padding-top: 20px;
     }
     
-    .pagetop {
-        width: 80px;
+.pagetop {
+        width: 100px;
     }
 }
 
