@@ -1,4 +1,9 @@
 @charset "utf-8";
+/* 追従ボタンの動き */
+html{
+    scroll-behavior: smooth;
+}
+
 /* ヘッダー部分 */
 .header_inner{
     display: flex;
@@ -36,7 +41,7 @@ body{
 
 .padding{
     max-width: 1000px;
-    padding: o 10px;
+    padding: 0 10px;
     margin: 0 auto;
 }
 
@@ -67,6 +72,8 @@ h2{
 .about_us{
     display: flex;
     padding-bottom: 106px;
+    padding-top: 100px;
+    align-items: center;
 }
 
 .heading_h2 img{
@@ -80,9 +87,8 @@ h2{
 }
 
 .about_us_image{
-    padding-top: 102px;
     border-radius: 0px 0px 80px;
-    width: 500px; /* 幅を500pxに固定 */
+    width: 50%; /* 幅を500pxに固定 */
     height: 560px; /* 高さを560pxに固定 */
     object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
 }
@@ -92,7 +98,6 @@ h2{
 }
 
 .about_us_inner{
-    padding-top: 157px; /* 167px-10px */
     padding-left: 81px ;
 }
 
@@ -165,6 +170,11 @@ h3{
 }
 
 /* EVENT */
+.EVENT{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
 .EVENT_font{
     padding-bottom: 40px ;
 }
@@ -173,7 +183,7 @@ h3{
     margin: 0 auto;
     border: 3.7px solid #4f260b;
     background-color: #fff;
-    padding: 44px 163px ;
+    padding: 44px 0 ;
     margin-bottom: 73px;
 }
 
@@ -183,6 +193,11 @@ h3{
     align-items: baseline; /* テキストのベースラインを揃える */
     line-height: 1.95;
     font-size: 23px;
+}
+
+.EVENT_inner ul {
+    max-width: 680px;
+    margin: 0 auto;
 }
 
 .date{
@@ -212,7 +227,10 @@ footer{
 
 .footer{
     display: flex;
-    padding: 85px 461px;
+    padding: 85px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+
 }
 .footer_logo img{
     height: 51px;
@@ -242,7 +260,6 @@ font-size: 20px;
     right: 20px;
     width: 125px;
 }
-
 
 
 /* SP Ver */
