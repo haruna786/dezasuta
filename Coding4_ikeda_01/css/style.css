@@ -31,8 +31,94 @@ html{
 }
 
 .logo{
-    width : 227px
+    width : 227px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
+
+
+.hamburger,
+.header_nav-sp{
+    display: none;
+}
+
+/* SP Ver */
+@media screen and (max-width: 1100px) {
+    .header_nav{
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        width: 30px;
+        height:30px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;/* 最大値 */
+        cursor: pointer;
+    }
+    .hamburger span {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        position: absolute;
+        top: 14px;
+        transition: 0.3s;
+    }
+ /* 擬似要素 */
+.hamburger span::before{
+        content: ""; /* 要素として認識させるコード */
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        position: absolute;
+        top: -14px;
+        transition: 0.3s;
+    }
+    .hamburger span::after{
+        content: ""; /* 要素として認識させるコード */
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -14px;
+        transition: 0.3s;
+    }
+    .open span{
+        background-color: transparent;
+    }
+    .open span::before{
+        transform: rotate(45deg);
+        top:0; /*元々同じ位置にあったものをさっきずらしたのを戻した */
+    }
+
+    .open span::after{
+        transform: rotate(-45deg);
+        bottom:0;
+    }
+    .header_nav-sp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000bb;
+}
+.header_nav-sp ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.header_nav-sp li{
+    color: #fff;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+}
+}
+
 
 /* メイン部分 */
 body{
@@ -58,7 +144,7 @@ body{
 h2{
     font-size: 82px;
     line-height: 1.17;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1em;/* 文字間 */
 }
 
 .head_second {
@@ -66,6 +152,60 @@ h2{
     line-height: 1.65;
     letter-spacing: 0.1em;
     padding-top: 53px;
+}
+
+.head_second-sp{
+    display: none;
+}
+
+/* SP Ver */
+@media screen and (max-width: 1100px) {
+h2{
+    font-size: 70px;
+    line-height: 1.17;
+    letter-spacing: 0.1em;
+    }
+
+.head_second {
+    font-size: 20px;
+    line-height: 1.65;
+    letter-spacing: 0.1em;
+    padding-top: 53px;
+}
+}
+@media screen and (max-width: 768px) {
+.padding{
+    max-width: 768px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+.headline{
+    padding-top: 42px ;
+    text-align: center; 
+}
+
+.head_first{
+    font-size: 17px;
+    padding-bottom: 34px;
+}
+
+h2{
+    font-size: 38px;
+    line-height: 1.16;
+    letter-spacing: 0.2em;/* 文字間 */
+}
+
+.head_second-sp {
+    display: block;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.1em;
+    padding-top: 30px;
+}
+.head_second{
+    display: none;
+}
+
 }
 
 /* about us */
@@ -81,9 +221,9 @@ h2{
     width: auto;
 }
 
-/* about_usの見出しだけ左揃えに戻す */
+
 .about_us .heading_h2 {
-    text-align: left;
+    text-align: left;/* about_usの見出しだけ左揃えに戻す */
 }
 
 .about_us_image{
@@ -110,6 +250,76 @@ h3{
 .about_us p{
     font-size: 16px;
     line-height: 1.62;
+}
+
+.about_us-sp{
+    display: none;
+}
+
+/* SP Ver */
+@media screen and (max-width: 1100px) {
+h3{
+    font-size: 35px;
+    padding-bottom: 40px;
+    line-height: 1.38;
+}
+}
+
+@media screen and (max-width: 768px) {
+.about_us{
+    display: none;
+}
+
+.about_us-sp{
+    display: block;
+    padding-bottom: 57px;
+    padding-top: 68px;
+    display: flex;
+    flex-direction: column; /* flexboxで縦並びにするため追加 */
+    align-items: center; /* 子要素を中央揃えにするため追加 */
+    justify-content: center;
+}
+
+.heading_h2 img{
+    height: 45px;
+    width: auto;
+}
+
+.about_us_image{
+    border-radius: 0px 0px 0px;
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
+     /* 左右の10pxのパディングを打ち消し、フル幅にする */
+    width: calc(100% + 20px); 
+    /*↓の対応で、画像の領域が広がるため、width: 100%だけでは足りない！ 100% + 左右のパディング合計20px */
+    margin-left: -10px;       /* 左のパディング10pxを打ち消す */
+    margin-right: -10px;      /* 右のパディング10pxを打ち消す */
+
+}
+
+.about_us_font{
+    padding-bottom: 15px;
+}
+
+.about_us_inner{
+    display: flex; /* flexboxで縦並びにするため追加 */
+    flex-direction: column; /* flexboxで縦並びにするため追加 */
+    padding: 0 0px;
+}
+
+h3{
+    font-size: 36px;
+    padding-top: 33px;
+    padding-bottom: 32px;
+    line-height: 1.25;
+    text-align: left
+}
+
+.about_us p{
+    font-size: 16px;
+    line-height: 1.75;
+}
 }
 
 /* menu */
@@ -150,6 +360,32 @@ h3{
     line-height: 1.47;
 }
 
+@media screen and (max-width: 768px) {
+    .menu_image{
+    display: flex;
+    flex-direction: column; /* flexboxで縦並びにするため追加 */
+    align-items: center; /* 子要素を中央揃えにするため追加 */
+    justify-content: center;
+    gap: 53px;
+    padding: 0 36px;
+}
+
+    .overlay_text{
+    position: absolute; /* 上に浮かす */
+    bottom: -22.5px; /* 画像の下からの位置を調整 */
+    left: 12.8px; /* 画像の左からの位置を調整 */
+    font-size: 40px;
+    color: #d30202;
+}
+    .menu_text{
+    font-size: 17px;
+    padding-top: 43px; /* 画像とテキストの間にスペースを確保 */
+    line-height: 1.47;
+    padding-bottom: 0px ;
+}
+}
+
+
 /* GALLERY */
 .gallery_image{
     display: flex;
@@ -167,6 +403,12 @@ h3{
 
 .GALLERY_inner{
     padding-bottom: 71px ;
+}
+
+@media screen and (max-width: 768px) {
+    .GALLERY{
+        padding-top: 95px;
+    }
 }
 
 /* EVENT */
@@ -209,16 +451,65 @@ h3{
     text-underline-offset: 0px;
 }
 
+@media screen and (max-width: 768px) {
+    .EVENT{
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 10px;
+    padding-bottom: 34px;
+}
+.EVENT_font{
+    padding-bottom: 20px ;
+}
+
+    .EVENT_inner {
+    max-width: 100%;
+    margin: 0 5%;
+    padding: 20px;
+}
+
+.EVENT_inner ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.date {
+    padding-right: 0;
+}
+
+.EVENT_inner ul li a {
+    border-bottom: 1px solid #4f260b;
+    font-size: 16px;
+    white-space: nowrap; /* テキストを折り返さず1行で表示 */
+    overflow: hidden; /* はみ出した部分を非表示に */
+    text-overflow: ellipsis; /* はみ出したテキストを「...」で省略 */
+}
+}
+
 /* ACCES */
 iframe{
     width: 100%;
-    height: 472;
+    height: 472px;
     filter: grayscale(100%) invert(92%) contrast(83%);
 }
 
 .ACCESS_font{
     padding-bottom: 45px;
 }
+
+@media screen and (max-width: 768px) {
+    iframe{
+    width: 100%;
+    height: 191px;
+    filter: grayscale(100%) invert(92%) contrast(83%);
+}
+
+.ACCESS_font{
+    padding-bottom: 8px;
+}
+}
+
 
 /* フッター部分 */
 footer{
@@ -246,6 +537,23 @@ line-height: 1.95;
 font-size: 20px;
 }
 
+@media screen and (max-width: 768px) {
+    footer{
+    background-color: #fff;
+}
+    .footer{
+    display: flex;
+    flex-direction: column;
+    padding: 49px 0;
+    max-width: 768px;
+    margin: 0 5%;
+}
+.footer_logo{
+    padding-bottom: 33px;
+}
+}
+
+
 /* 著作権 */
 .copy{
     text-align: center;
@@ -261,200 +569,12 @@ font-size: 20px;
     width: 125px;
 }
 
-
-/* SP Ver */
-
 @media screen and (max-width: 768px) {
-.header_inner {
-    justify-content: space-between; 
-    position: absolute;
+    .pagetop{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
 }
-
-.header_nav ul {
-    display: none; 
 }
-
-.logo {
-    width : 187px
-}
-.mainvisual img {
-    width: 100%;
-    height: 650px;
-    display: block;
-    object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
-}
-  /* メイン部分 */
-    .padding {
-    max-width: 768px;
-    padding: 0 10px;
-    margin: 0 auto;
-}
-    
-    .headline {
-        padding-top: 42px;
-        padding-bottom: 64px;
-        text-align: center; 
-    }
-
-    h2 {
-        font-size: 48px;
-    }
-
-    .head_first {
-        font-size: 18px;
-        padding-bottom: 30px;
-    }
-
-    .head_second {
-        font-size: 14px;
-        padding-top: 27px;
-    }
-
-    /* ABOUT US */
-.heading_h2 img {
-    height: 45.5px;
-    width: auto;
-}
-
-.about_us_font {
-    padding-bottom: 63px;
-}
-
-.about_us {
-    flex-direction: column; /* 縦並びにする */
-    padding-bottom: 50px;
-}
-
-.about_us_image{
-    border-radius: none;
-    width: 375px; /* 幅を500pxに固定 */
-    height: 245px; /* 高さを560pxに固定 */
-    object-fit: cover; /* 縦横比を維持したまま、指定サイズに合わせて画像を切り取る */
-}
-
-.about_us_inner {
-        padding: 30px 0;
-    }
-
-.about_us .heading_h2 {
-        text-align: center; /* SP版では中央揃えにする */
-    }
-
-h3 {
-        font-size: 36px;
-        padding-bottom: 30px;
-        text-align: left;
-        letter-spacing: 0.1em;
-    }
-    
-.about_us p {
-        font-size: 16px;
-        letter-spacing: 0.1em;
-    }
-
- /* MENU */
-.menu_inner ul {
-        flex-direction: column; /* 縦並びにする */
-        gap: 52px;
-    }
-
-.menu_inner ul li img {
-        width: 300px;
-        height: auto;
-    }
-
-.overlay_text {
-        position: absolute;
-        bottom: -23px;
-        left: 11px;
-        font-size: 40px;
-        color: #d30202;
-    }
-
-
-   /* GALLERY */
-.image3{
-        width: 375px;
-        height: 294px;
-    }
-
-.image1{
-        display: none;
-    }
-
-.image2{
-        display: none;
-    }
-
-.image4{
-        display: none;
-    }
-
-.image5{
-        display: none;
-    }
-
-/* EVENT */
-.EVENT_inner {
-        max-width: 100%;
-        margin: 0 19px;
-        padding: 30px;
-    }
-
-.EVENT_inner ul li {
-        flex-direction: column; /* 縦並びにする */
-        align-items: flex-start;
-    }
-
-.date {
-        padding-right: 0;
-        padding-bottom: 5px;
-        font-size: 16px;
-    }
-
-.EVENT_inner ul li a {
-        border-bottom: 1px solid #4f260b;
-        font-size: 16px;
-    }
-
- /* ACCESS */
-.ACCESS iframe {
-        height: 300px;
-    }
-
-.ACCESS_font{
-    padding-top: 33px;
-    padding-bottom: 10px;
-}
-
-
-/* フッター部分 */
-
-.footer_logo img {
-    height: 51px;
-    width: auto;
-}
-
-.footer {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-.footer_address ul {
-        padding-left: 0;
-        padding-top: 20px;
-        text-align: left;
-    }
-
-.copy {
-        text-align: center;
-        padding-top: 20px;
-    }
-    
-.pagetop {
-        width: 100px;
-    }
-}
-
 
