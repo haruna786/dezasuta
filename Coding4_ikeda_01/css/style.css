@@ -472,11 +472,9 @@ h3{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-bottom: 15px;
 }
 
-.EVENT_inner ul {
-    gap: 30px;
-}
 
 .date {
     padding-right: 0;
