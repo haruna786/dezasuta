@@ -487,7 +487,7 @@ h3{
 .EVENT_inner ul li a {
     border-bottom: 1px solid #4f260b;
     font-size: 16px;
-    width: 100%;/* 一番長い文章の横幅 */
+    width: 100%;/* 横幅 */
     white-space: nowrap; /* テキストを折り返さず1行で表示 */
     overflow: hidden; /* はみ出した部分を非表示に */
     text-overflow: ellipsis; /* はみ出したテキストを「...」で省略 */
