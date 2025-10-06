@@ -15,6 +15,7 @@ html{
     padding-left: 2.9%;
     position: absolute;
     width: 100%;
+    z-index: 9999;/* 最大値 */
 }
 
 .header_nav ul {
@@ -34,12 +35,25 @@ html{
     width : 227px;
     padding-top: 10px;
     padding-left: 10px;
+    z-index: 9999;
+    /* 値が大きいほど、他の要素の上に重なって表示 */
 }
 
 
 .hamburger,
 .header_nav-sp{
     display: none;
+}
+
+/* slick */
+.slick-dots {
+    bottom: 0px;
+}
+.slick-dots li.slick-active button:before {
+    color: #fff;
+}
+.slick-dots li button:before {
+    color: #fff;
 }
 
 /* SP Ver */
@@ -407,6 +421,15 @@ h3{
 
 .GALLERY_inner{
     padding-bottom: 71px ;
+}
+
+/* slick */
+ul .slick-dots {
+    bottom: 0px;
+    width: 0%;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
