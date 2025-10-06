@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
     <!-- lightbox読み込み -->
-    <link href="css/lightbox.min.css" rel="stylesheet">
+    <link href="./dist/css/lightbox.min.css" rel="stylesheet">
     <!-- デザインcss読み込み -->
     <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -145,12 +145,36 @@
             </h2>
             <div class="GALLERY_inner">
                 <ul class="gallery_image">
-                    <li class="image1"><img src="./images/pc_gallary_01-100.jpg" alt="" /></li>
-                    <li class="image2"><img src="./images/pc_gallary_02-100.jpg" alt="" /></li>
-                    <li class="image3"><img src="./images/pc_gallary_03-100.jpg" alt="" /></li>
-                    <li class="image4"><img src="./images/pc_gallary_04-100.jpg" alt="" /></li>
-                    <li class="image5"><img src="./images/pc_gallary_05-100.jpg" alt="" /></li>
-                    <li class="image3"><img src="./images/pc_gallary_03-100.jpg" alt="" /></li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_01-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_01-100.jpg" alt="コーヒーの画像" />
+                        </a>
+                    </li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_02-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_02-100.jpg" alt="cafeの看板" />
+                        </a>
+                    </li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_03-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_03-100.jpg" alt="店内の写真" />
+                        </a>
+                    </li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_04-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_04-100.jpg" alt="コーヒー豆" />
+                        </a>
+                    </li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_05-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_05-100.jpg" alt="人手賑わう店内の様子" />
+                        </a>
+                    </li>
+                    <li class="image">
+                        <a href="./images/pc_gallary_03-100.jpg" data-lightbox="cafe-gallery">
+                            <img src="./images/pc_gallary_03-100.jpg" alt="店内の写真" />
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -223,6 +247,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- slick読み込み -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox読み込み -->
+    <!-- <script src="./dist/js/lightbox-plus-jquery.min.js"></script> -->
 
     <script>
         $(function () {
@@ -254,20 +280,7 @@
             });
         })
     </script>
-    <!-- lightbox読み込み -->
-    <script src="js/lightbox-plus-jquery.min.js"></script>
-    <a href="./images/pc_gallary_01-100.jpg" data-lightbox="image-set">Image #1</a>
-    <a href="./images/pc_gallary_02-100.jpg" data-lightbox="image-set">Image #2</a>
-    <a href="./images/pc_gallary_03-100.jpg" data-lightbox="image-set">Image #3</a>
-    <a href="./images/pc_gallary_04-100.jpg" data-lightbox="image-set">Image #4</a>
-    <a href="./images/pc_gallary_05-100.jpg" data-lightbox="image-set">Image #5</a>
-    <!-- <script src="js/lightbox-plus-jquery.min.js"></script>
-    <script>
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true
-        })
-    </script> -->
+
 
 </body>
 
